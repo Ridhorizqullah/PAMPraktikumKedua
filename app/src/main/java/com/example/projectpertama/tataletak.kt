@@ -2,22 +2,23 @@ package com.example.projectpertama
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
-
-@composable
-fun TataletakColumn(modifier: Modifier){
-    column(modifier = modifier.padding(all=20.dp)) {
+// Fungsi Column
+@Composable
+fun TataletakColumn(modifier: Modifier = Modifier) {
+    Column(modifier = modifier.padding(all = 20.dp)) {
         Text(text = "Komponen 1")
         Text(text = "Komponen 2")
         Text(text = "Komponen 3")
@@ -25,110 +26,122 @@ fun TataletakColumn(modifier: Modifier){
     }
 }
 
-annotation class composable
-
-@composable
-fun TataletakRow(modifier: Modifier){
-    Row (modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly){
+// Fungsi Row
+@Composable
+fun TataletakRow(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
         Text(text = "Komponen 1")
         Text(text = "Komponen 2")
         Text(text = "Komponen 3")
         Text(text = "Komponen 4")
     }
-
 }
 
-@composable
-fun TataletakBox(modifier: Modifier){
+// Fungsi Box
+@Composable
+fun TataletakBox(modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(), contentAlignment = Alignment.Center
-    )   {
+        modifier = modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
         Text(text = "Komponen 1")
-        Text(text = "Komponen 2")
-        Text(text = "Komponen 3")
-        Text(text = "Komponen 4")
-
-
     }
 }
 
-@composable
-fun TataletakColumnRow(modifier: Modifier) {
+// Fungsi Column di dalam Row
+@Composable
+fun TataletakColumnRow(modifier: Modifier = Modifier) {
     Column {
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-
             Text(text = "Komponen baris 1")
             Text(text = "Komponen baris 2")
             Text(text = "Komponen baris 3")
             Text(text = "Komponen baris 4")
         }
         Row(
-            Modifier = modifier.fillMaxWidth(),
+            modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Text(text = "Komponen baris 5")
             Text(text = "Komponen baris 6")
             Text(text = "Komponen baris 7")
             Text(text = "Komponen baris 8")
-
         }
     }
 }
 
- @composable
-fun TataletakRowColumn(modifier: Modifier) {
-    Row (modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-        Column(){
+// Fungsi Row di dalam Column
+@Composable
+fun TataletakRowColumn(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Column {
             Text(text = "Komponen baris 1")
             Text(text = "Komponen baris 2")
             Text(text = "Komponen baris 3")
             Text(text = "Komponen baris 4")
         }
-        Column(){
+        Column {
             Text(text = "Komponen baris 5")
             Text(text = "Komponen baris 6")
             Text(text = "Komponen baris 7")
             Text(text = "Komponen baris 8")
         }
-
     }
- }
+}
 
-@composable
-fun TataletakBoxColumnRow(modifier: Modifier) {
+// Fungsi Box + Spacer + Image
+@Composable
+fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
     val gambar = painterResource(id = R.drawable.foto)
-    Column {
+
+    Column(modifier = modifier.fillMaxSize()) {
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
-                .height()
+                .height(150.dp)
                 .background(color = Color.Green),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = "Komponen baris 1")
-            Text(text = "Komponen baris 2")
-            Text(text = "Komponen baris 3")
-            Text(text = "Komponen baris 4")
-                )
-            }
+            Text(
+                text = "Komponen Box Hijau",
+                color = Color.White,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
-    spacer(modifier = Modifier.height(10.dp))
+
+        Spacer(modifier = Modifier.height(10.dp))
+
         Box(
-            Modifier = Modifier
+            modifier = Modifier
                 .fillMaxWidth()
-                .height(100.dp)
+                .height(200.dp)
                 .background(color = Color.Yellow),
             contentAlignment = Alignment.Center
-
-        ){
-            Image(painter = gambar,
+        ) {
+            Image(
+                painter = gambar,
                 contentDescription = null,
-                contentScale = ContentScale.fit)
+                contentScale = ContentScale.Fit
+            )
+            Text(
+                text = "myMusic",
+                color = Color.Black,
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif,
+                modifier = Modifier.align(Alignment.Center)
+            )
+        }
     }
 }
