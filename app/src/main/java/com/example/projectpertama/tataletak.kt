@@ -1,5 +1,6 @@
 package com.example.projectpertama
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -125,7 +126,9 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 .background(color = Color.Yellow),
             contentAlignment = Alignment.Center
 
-
-        )
+        ){
+            Image(painter = gambar,
+                contentDescription = null,
+                contentScale = ContentScale.fit)
     }
 }
