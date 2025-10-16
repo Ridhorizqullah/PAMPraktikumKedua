@@ -1,6 +1,7 @@
 package com.example.projectpertama
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.Modifier
@@ -29,4 +30,15 @@ fun TataletakRow(modifier: Modifier){
         Text(text = "Komponen 4")
     }
 
+}
+
+@composable
+fun TataletakBox(modifier: Modifier){
+    Box(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(), contentAlignment = Alignment.Center
+    )   {
+
+    }
 }
