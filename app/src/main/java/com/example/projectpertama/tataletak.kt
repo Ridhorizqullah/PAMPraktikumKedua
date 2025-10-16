@@ -114,11 +114,18 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
             Text(text = "Komponen baris 2")
             Text(text = "Komponen baris 3")
             Text(text = "Komponen baris 4")
-
-
-
                 )
             }
         }
+    spacer(modifier = Modifier.height(10.dp))
+        Box(
+            Modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .background(color = Color.Yellow),
+            contentAlignment = Alignment.Center
+
+
+        )
     }
 }
