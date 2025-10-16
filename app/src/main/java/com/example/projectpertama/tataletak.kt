@@ -110,6 +110,11 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 .background(color = Color.Green),
             contentAlignment = Alignment.Center
         ) {
+            Text(text = "Komponen baris 1")
+            Text(text = "Komponen baris 2")
+            Text(text = "Komponen baris 3")
+            Text(text = "Komponen baris 4")
+
 
 
                 )
