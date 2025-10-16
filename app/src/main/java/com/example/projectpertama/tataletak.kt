@@ -52,16 +52,20 @@ fun TataletakBox(modifier: Modifier){
 @composable
 fun TataletakColumnRow(modifier: Modifier) {
     Column {
-        Row(modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
 
             Text(text = "Komponen baris 1")
             Text(text = "Komponen baris 2")
             Text(text = "Komponen baris 3")
             Text(text = "Komponen baris 4")
         }
-        Row(Modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly) {
+        Row(
+            Modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
             Text(text = "Komponen baris 5")
             Text(text = "Komponen baris 6")
             Text(text = "Komponen baris 7")
@@ -70,3 +74,22 @@ fun TataletakColumnRow(modifier: Modifier) {
         }
     }
 }
+
+ @composable
+fun TataletakRowColumn(modifier: Modifier) {
+    Row (modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        Column(){
+            Text(text = "Komponen baris 1")
+            Text(text = "Komponen baris 2")
+            Text(text = "Komponen baris 3")
+            Text(text = "Komponen baris 4")
+        }
+        Column(){
+            Text(text = "Komponen baris 5")
+            Text(text = "Komponen baris 6")
+            Text(text = "Komponen baris 7")
+            Text(text = "Komponen baris 8")
+        }
+
+    }
+ }
